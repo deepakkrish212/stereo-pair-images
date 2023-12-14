@@ -9,8 +9,12 @@ class ValidateDepth:
 
     def validate(self):
         assert (
-            self.generated_depth.shape == self.true_depth.values
+            self.generated_depth.shape == self.true_depth.shape
         ), "Depth maps are not the same size"
+        
+        # Fill nan if any
+        self.generated_depth.fillna(0, inplace=True)
+        self.true_depth.fillna(0, inplace=True)
 
         diff = np.abs(self.generated_depth.values - self.true_depth.values)
 
