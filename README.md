@@ -27,6 +27,26 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+## Available Parameter
+
+```bash
+usage: main.py [-h] -l LEFT -r RIGHT -b BASELINE -f FOCAL [-d DEPTH] [--validate] [--execute]
+
+options:
+  -h, --help            show this help message and exit
+  -l LEFT, --left LEFT  The Path of left stero image
+  -r RIGHT, --right RIGHT
+                        The Path of right stero image
+  -b BASELINE, --baseline BASELINE
+                        The baseline of the stereo image
+  -f FOCAL, --focal FOCAL
+                        The focal-length of the stereo image in pixels
+  -d DEPTH, --depth DEPTH
+                        The Path of the depth image (only required for validation)
+  --validate            Validate the depth map
+  --execute             Execute the disparity and depth map processing
+```
+
 ## Usage
 To use the software, provide the left and right stereo images as inputs. The software supports two main operations: --execute for processing and generating depth maps, and --validate for validating generated maps against provided depth maps.
 
